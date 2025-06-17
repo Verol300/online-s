@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beuty Shop - Home</title>
+  <link rel="stylesheet" href="shopping.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('online.JPG'); /* Add your own background image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 1000px;
+      border-radius: 10px;
+    }
+
+    header, section {
+      text-align: center;
+    }
+
+    .product-card {
+      display: inline-block;
+      width: 180px;
+      margin: 15px;
+      padding: 10px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    /* About Section */
+    .about {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f8f8f8;
+      border-radius: 8px;
+    }
+
+    .about h2 {
+      color: #333;
+    }
+
+    .contact-button {
+      display: inline-block;
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Contact Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      width: 300px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .modal-content input, .modal-content textarea, .modal-content button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="shopping.html">Home</a>
+    <a href="Clothes.html">Clothes</a>
+    <a href="Shoes.html">Shoes</a>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>Welcome to Beuty Shop</h1>
+      <p>Your one-stop shop for fashion, beauty, and style</p>
+    </header>
+
+    <!-- Products Section -->
+    <section>
+      <div class="product-card">
+        <a href="Clothes.html">
+          <img src="images/clothes.jpg" alt="Clothes">
+          <h3>Clothes</h3>
+        </a>
+      </div>
+
+      <div class="product-card">
+        <a href="Shoes.html">
+          <img src="images/shoes1.jpg" alt="Shoes">
+          <h3>Shoes</h3>
+        </a>
+      </div>
+
+      <div class="product-card">
+        <img src="images/bags.jpg" alt="Bags">
+        <h3>Bags</h3>
+      </div>
+
+      <div class="product-card">
+        <img src="images/perfumes.jpg" alt="Perfumes">
+        <h3>Perfumes</h3>
+      </div>
+
+      <div class="product-card">
+        <img src="images/makeup.jpg" alt="Makeup">
+        <h3>Makeup</h3>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <h2>About Beuty Shop</h2>
+      <p>
+        Beuty Shop is your go-to destination for stylish clothing, fashionable shoes, elegant bags,
+        fragrances, and beauty products. We aim to bring affordable luxury right to your door with
+        quality products and excellent customer service.
+      </p>
+      <button class="contact-button" onclick="openContact()">Contact Us</button>
+    </section>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeContact()">×</span>
+      <h3>Contact Us</h3>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button onclick="sendMessage()">Send Message</button>
+    </div>
+  </div>
+
+  <script>
+    function openContact() {
+      document.getElementById("contactModal").style.display = "flex";
+    }
+
+    function closeContact() {
+      document.getElementById("contactModal").style.display = "none";
+    }
+
+    function sendMessage() {
+      alert("Thank you for contacting Beuty Shop! We'll get back to you soon.");
+      closeContact();
+    }
+  </script>
+</body>
+</html>
